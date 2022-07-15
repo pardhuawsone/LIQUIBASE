@@ -7,7 +7,7 @@ on:
     branches:
       - main
     paths:
-	  - 'dbscripts/deploy/**'
+      - 'dbscripts/deploy/**'
 	 
   #workflow_dispatch:
 
