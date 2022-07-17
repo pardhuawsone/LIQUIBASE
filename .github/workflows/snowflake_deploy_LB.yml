@@ -13,13 +13,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-	- name: Run 'Liquibase status' in a docker container
-	- uses: docker://liquibase/liquibase:latest
-	with:
-	  args: --url=${{secrets.SF_URL }} --changeLogFile=/dbscripts/masterChangelog.xml --username={{secrets.SF_USERNAME }} --password={{ secrets.SF_PASSWORD }} --driver={{ secrets.SF_DRIVER }} --snowflakeSCHEMA=${{ secrets.SF_SCHEMA }} status
+    - name: Run 'Liquibase status' in a docker container
+      uses: docker://liquibase/liquibase:latest
+      with:
+        args: --url=${{secrets.SF_URL }} --changeLogFile=/dbscripts/masterChangelog.xml --username={{secrets.SF_USERNAME }} --password={{ secrets.SF_PASSWORD }} --driver={{ secrets.SF_DRIVER }} --snowflakeSCHEMA=${{ secrets.SF_SCHEMA }} status
 
-	- name: Run 'Liquibase update' in a docker container
-	- uses: docker://liquibase/liquibase:latest
-	with:
-	  args: --url=${{secrets.SF_URL }} --changeLogFile=/dbscripts/masterChangelog.xml --username=${{secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --driver=${{ secrets.SF_DRIVER }} --snowflakeSCHEMA=${{ secrets.SF_SCHEMA }} --logLevel=debug update 
+    - name: Run 'Liquibase update' in a docker container
+      uses: docker://liquibase/liquibase:latest
+      with:
+        args: --url=${{secrets.SF_URL }} --changeLogFile=/dbscripts/masterChangelog.xml --username=${{secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --driver=${{ secrets.SF_DRIVER }} --snowflakeSCHEMA=${{ secrets.SF_SCHEMA }} --logLevel=debug update 
 	  
