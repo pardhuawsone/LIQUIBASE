@@ -21,5 +21,4 @@ jobs:
     - name: Run 'Liquibase update' in a docker container
       uses: docker://liquibase/liquibase:latest
       with:
-        args: --url=${{ secrets.SF_URL }} --changeLogFile=/dbscripts/masterChangelog.xml --username=${{ secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --driver=${{ secrets.SF_DRIVER }} --snowflakeSCHEMA=${{ secrets.SF_SCHEMA }} --logLevel=debug update 
-	  
+        args: --url=${{ secrets.SF_URL }} --changeLogFile=/dbscripts/masterChangelog.xml --username=${{ secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --driver=${{ secrets.SF_DRIVER }} --snowflakeSCHEMA=${{ secrets.SF_SCHEMA }} --logLevel=debug update
