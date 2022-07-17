@@ -9,10 +9,9 @@ on:
     paths:
       - 'dbscripts/deploy/**'
 	 
-  #workflow_dispatch:
+  #workflow_dispatch
 
-
-jobs:
+jobs:	
   LBJobDockerCLI:
     runs-on: ubuntu-latest
     steps:
