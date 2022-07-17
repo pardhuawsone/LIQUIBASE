@@ -8,6 +8,7 @@ on:
       - main
     paths:
       - 'dbscripts/deploy/**'
+  workflow_dispatch:
 jobs:	
   LBJobDockerCLI:
     runs-on: ubuntu-latest
