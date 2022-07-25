@@ -11,7 +11,8 @@ on:
   workflow_dispatch:
 jobs:	
   LBJobDockerCLI:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: liquibase-latest
     steps:
     - uses: actions/checkout@v2
 #Note the below assumes that a host path or volume is mounted into the container at ./Docker(or action will fail)!!!  
