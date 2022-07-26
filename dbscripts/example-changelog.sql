@@ -30,7 +30,7 @@ alter table demo.employee123 add column country varchar(2)
 create table demo.TREE (
     name varchar(50),
     leafs varchar(50),
-    height number(50)
+    height number(22)
 )
 --rollback DROP TABLE Tree;
 
