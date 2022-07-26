@@ -23,6 +23,14 @@ create table demo.employee123 (
 --changeset other.dev:6 labels:example-label context:example-context
 --comment: example comment
 
-alter table demo.person add column country varchar(2)
+alter table demo.employee123 add column country varchar(2)
 --rollback ALTER TABLE person DROP COLUMN country;
+
+--changeset saradhi.makkena:7
+create table demo.TREE (
+    name varchar(50),
+    leafs varchar(50),
+    height number(50)
+)
+--rollback DROP TABLE Tree;
 
