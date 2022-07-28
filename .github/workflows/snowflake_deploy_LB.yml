@@ -19,9 +19,9 @@ jobs:
     - name: Run 'Liquibase status' in a docker container
       uses: docker://liquibase/liquibase:latest
       with:
-        #args: --url=${{ secrets.SF_URL }} --username=${{ secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --driver=${{ secrets.SF_DRIVER }} --default-schema-name=${{ secrets.SF_SCHEMA }} --changeLogFile=/dbscripts/example-changelog.sql status
-        args: --url=${{ secrets.SF_URL }} --username=${{ secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --default-schema-name=${{ secrets.SF_SCHEMA }} --changeLogFile=/dbscripts/example-changelog.sql status
+        #args: --url=${{ secrets.SF_URL }} --username=${{ secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --driver=${{ secrets.SF_DRIVER }} --default-schema-name=${{ secrets.SF_SCHEMA }} --changeLogFile=/dbscripts/deploy/MasterChangeLog.xml status
+        args: --url=${{ secrets.SF_URL }} --username=${{ secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --default-schema-name=${{ secrets.SF_SCHEMA }} --changeLogFile=/dbscripts/deploy/MasterChangeLog.xml status
     - name:  Run 'Liquibase update' in a docker container
       uses: docker://liquibase/liquibase:latest
       with:
-        args: --url=${{ secrets.SF_URL }} --username=${{ secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --default-schema-name=${{ secrets.SF_SCHEMA }} --changeLogFile=/dbscripts/example-changelog.sql update
+        args: --url=${{ secrets.SF_URL }} --username=${{ secrets.SF_USERNAME }} --password=${{ secrets.SF_PASSWORD }} --default-schema-name=${{ secrets.SF_SCHEMA }} --changeLogFile=/dbscripts/deploy/MasterChangeLog.xml update
