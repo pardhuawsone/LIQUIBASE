@@ -3,11 +3,11 @@
 name: snowflake_deploy_LB
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'dbscripts/**'
+  #push:
+    #branches:
+      #- main
+    #paths:
+      #- 'dbscripts/**'
   workflow_dispatch:
 jobs:	
   LBJobDockerCLI:
